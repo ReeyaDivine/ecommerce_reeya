@@ -1,13 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Brand,Category,Product,ProductAdmin
+from .models import Brand,Category,Product
 
 
 
 admin.site.register(Brand)
 admin.site.register(Category)
-admin.site.register(Product)
+
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ["name","price","brand","category",]
@@ -19,5 +19,5 @@ class ProductAdmin(admin.ModelAdmin):
 class Meta:
     model = Product 
 
+    admin.site.register(Product,ProductAdmin)
 
-admin.site.register(ProductAdmin) 

@@ -7,8 +7,8 @@ class Brand(models.Model):
     name = models.CharField(max_length=200)
     is_active = models.BooleanField()
 
-def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
  
 class Category(models.Model):
     name = models.CharField(max_length=200)
@@ -17,6 +17,10 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = "Categories"
+
+    
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
