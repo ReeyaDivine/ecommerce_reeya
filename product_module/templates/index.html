@@ -50,8 +50,9 @@
                 <h4 class="bold text-secondary"> 
                     <strong>NRs. {{ product.price }}</strong>
                 </h4>
-            <form class="d-flex" action="/cart" method="GET">
+            <form class="d-flex" action="cart" method="POST">
                     <!-- Default input -->
+                    {% csrf_token %}
                     <input type="hidden" name="id" value="{{product.id}}" />
 
                     <input type="number" name="qty" value="1" aria-label="Search" class="form-control" style="width: 100px">
@@ -100,5 +101,5 @@
             </table>
         </div>
     </div>
-{% endfor %}
+    {% endfor %}
 {% endblock %}
