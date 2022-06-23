@@ -94,6 +94,23 @@ def cart(request):
         }
         return render(request, "cart.html", context)
 
+    elif request.method == "GET":
+        # retrieve the cart items for the user from db
+        cart_items = CartItem.objects.filter(user=request.user)
+    
+        # calculate total
+        total = 0
+        for item in cart_items:
+            total += item.product.price * item.quantity
+
+        # return view
+        context = {
+            'cart_items': cart_items,
+            'total': total,
+        }
+        
+        return render(request, "cart.html", context)
+
 def removecart(request, id):
     try:
         # get cart item and remove it
