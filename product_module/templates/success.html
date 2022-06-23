@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Success{% endblock %}
+
+{% block header %}
+    <h2>Payment Successful</h2>
+{% endblock %}
+
+{% block content %}
+    <h3 class="text-success">{{ message }}</h3>
+    
+    <p>Thank you. Please visit our store again!</p>
+    
+    <p>
+
+        <a class="btn btn-primary" href="/"><i class="fa fa-search" aria-hidden="true"></i> Continue Shopping...</a>
+
+    </p>
+{% endblock %}

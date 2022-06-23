@@ -42,7 +42,7 @@ class Product(models.Model):
 
     image_tag.short_description = "Product"
         
-def __str__(self):
+    def __str__(self):
             return self.name
 
 
