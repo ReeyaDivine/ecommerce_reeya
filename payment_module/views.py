@@ -84,7 +84,6 @@ def confirmpayment(request):
             with transaction.atomic():
                 # open an atomic transaction, i.e. all successful or none
                 make_payment(token, amount)
-                
                 maintain_invoice(request, token, amount)
         except Exception as e:
              request.session["message"] = str(e)

@@ -121,3 +121,7 @@ def removecart(request, id):
         pass
     # redirect to cart
     return redirect(cart)
+
+
+
+    
