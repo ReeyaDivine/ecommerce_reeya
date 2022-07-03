@@ -9,11 +9,60 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="{% static 'css\bootstrap.min.css.map' %}" />
 
+        <!-- fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/font-awesome.css' %}" rel='stylesheet' type='text/css'>
+      
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    
+    <!-- main css -->
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+    <link href="{% static 'responsive.css' %}" rel="stylesheet">
+    
+    <!-- Slider -->
+    <link href="{% static 'css/owl.carousel.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.transitions.css' %}" rel="stylesheet"> 
+      
+    <!-- lightbox -->
+    <link href="{% static 'css/prettyPhoto.css' %}" rel="stylesheet">
+
         <title>{% block title %} Electronics Commerce {% endblock %}</title> 
         <style type="text/css">.min-h-100 { min-height: 100%; } </style>
     </head>
     <body>
-        <div class="row">
+
+        <div id="wrapper" class="homepage-1"> <!-- wrapper -->
+            <div id="header"> <!-- header -->
+                <div class="top"> <!-- top -->
+                    <div class="container">
+                        <ul class="top-support"> 
+                            <li><i class="fa fa-phone-square"></i><span>(+800) 123 456 7890</span></li>
+                            <li><a href=""><i class="fa fa-envelope-square"></i><span>info@bootstrapmart.com</span></a></li>
+                        </ul>
+                        <div class="top-offers">
+                            <div class="alert alert-warning alert-dismissible fade in offers" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
+                                Free Shipping <a href="">on All Orders Over</a> $75!
+                            </div>
+                        </div>
+                        <div class="top-control">
+                            <a href="">Track Order</a><span>•</span><a href="">Register</a><span>•</span><a href="">Login</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="top-offers show-mobile">
+                            <div class="alert alert-warning alert-dismissible fade in offers" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times-circle"></i></span></button>
+                                Free Shipping <a href="">on All Orders Over</a> $75!
+                            </div>
+                        </div>
+                    </div>
+             </div> <!-- top -->
+
+        <!-- <div class="row">
             <div id="header" class="bg-info col-sm-12 col-md-12 col-lg-12">
                 <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
@@ -29,8 +78,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
 
             <div id="sidebar" class="min-h-100 min-h-800 bg-light border col-sm-3 col-md-3 col-lg-3"> {% block sidebar %}
              <ul>
@@ -47,6 +96,6 @@
             <div id="content" class="min-h-100 bg-light col-sm-9 col-md-9 col-lg-9"> 
                 {% block content %}{% endblock %}
             </div>
-        </div>
+        </div> -->
     </body>
 </html>
