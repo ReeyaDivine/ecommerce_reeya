@@ -122,6 +122,14 @@ def removecart(request, id):
     # redirect to cart
     return redirect(cart)
 
+def success_page(request):
+    message = request.session["message"]
+    return render(request, "success.html",{"message":message})
+
+def error_page(request):
+    message = request.session["message"]
+    return render(request,"error.html",{"message":message})
+
 
 
     
