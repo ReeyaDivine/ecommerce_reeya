@@ -72,6 +72,7 @@ def make_payment(token, amount):
 def maintain_invoice(request, token, amount):
     # retrieve cart items
     cart_items = CartItem.objects.filter(user=request.user)
+    
     # save invoice
     invoice = Invoice(
     user = request.user,
@@ -80,6 +81,7 @@ def maintain_invoice(request, token, amount):
     payment_date = datetime.now()
     )
     invoice.save()
+    
     # save invoice detail
     for cart_item in cart_items:
         invoice_detail = InvoiceDetail(
@@ -89,6 +91,7 @@ def maintain_invoice(request, token, amount):
             sub_amount = cart_item.quantity * cart_item.product.price
         )
         invoice_detail.save()
+    
     # adjust product quantity and clear cart
     for cart_item in cart_items:
     # reduce quantity from Product
@@ -97,5 +100,6 @@ def maintain_invoice(request, token, amount):
             raise Exception(f"Insufficient quantity {cart_item.quantity} for {product.name}")
         product.quantity -= cart_item.quantity
         product.save()
+   
     # clear cart for the user
         cart_item.delete()
