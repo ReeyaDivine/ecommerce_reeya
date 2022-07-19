@@ -37,7 +37,8 @@
                 <!-- Links -->
             </div>
             <div>
-                <form class="form-inline" method="POST"> {% csrf_token %}
+                <form class="form-inline" method="POST"> 
+                    {% csrf_token %}
                     <div>
                         <input name="query" class="form-control" type="text" placeholder="Search/enter price-range" aria-label="Search" value="{{search_query}}">
                     </div>
@@ -81,7 +82,7 @@
 
                 <tr>
                     <td>Color Code</td>
-                    <td><div style="height: 25px; width: 25px; background-color: '{{ product.color_code }}';"></div></td>
+                    <td><div style="height: 25px; width: 25px; background-color: {{ product.color_code }};"></div></td>
                 </tr>
 
                 <tr>

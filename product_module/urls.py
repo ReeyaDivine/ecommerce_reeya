@@ -4,7 +4,7 @@ from .views import index, cart, removecart,success_page,error_page
 
 urlpatterns = [
     path('', index),
-    path('cart', cart),
+    path('cart/', cart),
     path('cart/remove/<int:id>', removecart),
     path('success_page/', success_page, name="success_page"),
     path('error_page/', error_page, name="error_page"),

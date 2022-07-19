@@ -7,8 +7,6 @@ from .models import Product, CartItem
 
 # Create your views here.
 
-
-
 def index(request):
         if request.method == "GET":
             category_id = request.GET.get("category") 
@@ -21,14 +19,15 @@ def index(request):
                 products = Product.objects.filter(filter_query)
             else:
                 products = Product.objects.all()
-                categories = Category.objects.all()
-                brands = Brand.objects.all()
-                context = {
+                
+            categories = Category.objects.all()
+            brands = Brand.objects.all()
+            context = {
                 'products': products,
                 'categories': categories,
                 'brands': brands,
                 'search_query': '',
-                }
+            }
             return render(request, 'index.html', context)
 
         elif request.method == "POST":
@@ -38,15 +37,15 @@ def index(request):
                 filter_query = Q(price__gte=price_values[0]) & Q(price__lte=price_values[1])
             else:
                 filter_query = Q(name__icontains=q) | Q(price__icontains=q) | Q(brand__name__icontains=q)
-                products = Product.objects.filter(filter_query)
-                categories = Category.objects.all()
-                brands = Brand.objects.all()
-                context = {
-                    'products': products,
-                    'categories': categories,
-                    'brands': brands,
-                    'search_query': q,
-                }
+            products = Product.objects.filter(filter_query)
+            categories = Category.objects.all()
+            brands = Brand.objects.all()
+            context = {
+                'products': products,
+                'categories': categories,
+                'brands': brands,
+                'search_query': q,
+            }
             return render(request, 'index.html', context)
 
 # @methods["POST"]
